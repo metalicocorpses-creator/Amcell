@@ -1,0 +1,21 @@
+<div class="product-card" data-category="{{ p.data.categoria }}">
+  <div class="product-media">
+    {% if p.data.selo == "novidade" %}<span class="product-tag tag-new">Novidade</span>{% endif %}
+    {% if p.data.selo == "best" %}<span class="product-tag tag-best">Mais vendido</span>{% endif %}
+    {% if p.data.selo == "oferta" %}<span class="product-tag tag-offer">Oferta</span>{% endif %}
+    <img src="{{ p.data.imagemPrincipal }}" alt="{{ p.data.nome }}" style="width:100%;height:100%;object-fit:cover">
+  </div>
+  <div class="product-body">
+    <span class="product-cat">{{ (categorias | selectattr("slug", "equalto", p.data.categoria) | first).nome }}</span>
+    <h3>{{ p.data.nome }}</h3>
+    <p class="product-desc">{{ p.data.descricaoResumo }}</p>
+    <div class="product-price">
+      <b>R$ {{ p.data.preco | preco }}</b>
+      {% if p.data.precoAntigo %}<s>R$ {{ p.data.precoAntigo | preco }}</s>{% endif %}
+    </div>
+    <div class="product-actions">
+      <a href="{{ p.url }}" class="btn btn-outline">Ver detalhes</a>
+      <a href="{{ p.data.nome | linkWhatsapp(loja.whatsapp) }}" target="_blank" rel="noopener" class="btn btn-whatsapp">WhatsApp</a>
+    </div>
+  </div>
+</div>

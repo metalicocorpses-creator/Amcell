@@ -1,0 +1,42 @@
+---
+layout: base.njk
+titulo: "Produtos"
+descricao: "Catálogo completo de acessórios para celular: capinhas, películas, carregadores, cabos, fones, suportes e muito mais."
+permalink: /produtos/index.html
+---
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Início</a> / Produtos</div>
+    <h1>Todos os produtos</h1>
+    <p>Explore nosso catálogo completo de acessórios para celular e tecnologia.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:24px">
+  <div class="container">
+    <div class="filter-bar">
+      <button class="filter-chip active" data-filter="todos">Todos</button>
+      {% for cat in categorias %}
+      <button class="filter-chip" data-filter="{{ cat.slug }}">{{ cat.nome }}</button>
+      {% endfor %}
+    </div>
+
+    <div class="products-grid">
+      {% for item in collections.produtos %}
+        {% set p = item %}
+        {% include "card-produto.njk" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    var cat = params.get('cat');
+    if (cat) {
+      var chip = document.querySelector('.filter-chip[data-filter="' + cat + '"]');
+      if (chip) chip.click();
+    }
+  })();
+</script>

@@ -1,0 +1,82 @@
+---
+layout: base.njk
+titulo: "Contato"
+descricao: "Fale com a AmCell pelo WhatsApp, Instagram, e-mail ou formulário de contato. Estamos prontos para te ajudar."
+permalink: /contato/index.html
+---
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Início</a> / Contato</div>
+    <h1>Fale com a gente</h1>
+    <p>Tire dúvidas, peça recomendações ou finalize sua compra. Estamos por aqui para te ajudar.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:24px">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <h2 style="margin-bottom:0">Nossos canais</h2>
+        <div class="contact-list">
+          <div class="contact-item">
+            <span class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.4A10 10 0 1012 2z" stroke="currentColor" stroke-width="1.8"/></svg></span>
+            <div><strong>WhatsApp</strong><p>{{ loja.whatsapp }} — resposta rápida para dúvidas e compras.</p></div>
+          </div>
+          <div class="contact-item">
+            <span class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span>
+            <div><strong>Instagram</strong><p>{{ loja.instagram }} — novidades, promoções e bastidores.</p></div>
+          </div>
+          <div class="contact-item">
+            <span class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 6l9 7 9-7" stroke="currentColor" stroke-width="1.8"/></svg></span>
+            <div><strong>E-mail</strong><p>{{ loja.email }}</p></div>
+          </div>
+          <div class="contact-item">
+            <span class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-7.2 7-12a7 7 0 10-14 0c0 4.8 7 12 7 12z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></span>
+            <div><strong>Endereço</strong><p>{{ loja.endereco }}</p></div>
+          </div>
+          <div class="contact-item">
+            <span class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l4 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+            <div><strong>Horário de atendimento</strong><p>{{ loja.horario }}</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h2>Envie uma mensagem</h2>
+        <p style="margin-bottom:24px">Responderemos o quanto antes, geralmente em até 1 dia útil.</p>
+        <form id="contact-form" name="contato" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contato">
+          <div class="form-row">
+            <div class="field">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+            </div>
+            <div class="field">
+              <label for="telefone">Telefone</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999">
+            </div>
+          </div>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="voce@email.com" required>
+          </div>
+          <div class="field">
+            <label for="assunto">Assunto</label>
+            <select id="assunto" name="assunto">
+              <option>Dúvida sobre produto</option>
+              <option>Status do pedido</option>
+              <option>Trocas e devoluções</option>
+              <option>Parcerias</option>
+              <option>Outro assunto</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Como podemos ajudar?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Enviar mensagem</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

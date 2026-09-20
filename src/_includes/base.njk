@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ titulo }} — {{ loja.nome }}</title>
+<meta name="description" content="{{ descricao }}">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+{% include "header.njk" %}
+{{ content | safe }}
+{% include "footer.njk" %}
+<script>
+  document.querySelectorAll('.current-year').forEach(function(el){
+    el.textContent = new Date().getFullYear();
+  });
+</script>
+</body>
+</html>

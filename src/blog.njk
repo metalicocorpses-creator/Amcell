@@ -1,0 +1,24 @@
+---
+layout: base.njk
+titulo: "Blog"
+descricao: "Dicas sobre acessórios, cuidados com o celular e tecnologia no dia a dia. Conteúdo criado pela equipe AmCell."
+permalink: /blog/index.html
+---
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Início</a> / Blog</div>
+    <h1>Dicas &amp; Tecnologia</h1>
+    <p>Conteúdo para te ajudar a escolher, cuidar e aproveitar melhor os acessórios do seu celular.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:24px">
+  <div class="container">
+    <div class="blog-grid">
+      {% set posts = collections.blog | reverse %}
+      {% for post in posts %}
+        {% include "card-post.njk" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

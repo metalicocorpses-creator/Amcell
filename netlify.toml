@@ -1,0 +1,14 @@
+# Configuração do Netlify para o site AmCell (Eleventy + Decap CMS)
+
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Redireciona /admin para /admin/index.html quando necessário
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200

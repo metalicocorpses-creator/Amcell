@@ -1,0 +1,47 @@
+---
+layout: base.njk
+titulo: "Buscar"
+descricao: "Busque produtos e artigos do blog da AmCell."
+permalink: /busca/index.html
+---
+<style>
+  #search-empty{ display:none; text-align:center; padding: 60px 20px; color: var(--ink-soft); }
+  #search-empty svg{ margin: 0 auto 16px; color: var(--line); }
+</style>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Início</a> / Busca</div>
+    <h1>Resultados para <span id="search-term" style="color:var(--blue)"></span></h1>
+    <p>Produtos e artigos do blog que combinam com a sua pesquisa.</p>
+  </div>
+</section>
+
+<section class="section" id="search-results" style="padding-top:24px">
+  <div class="container">
+    <h2 style="margin-bottom:24px">Produtos</h2>
+    <div class="products-grid">
+      {% for item in collections.produtos %}
+        {% set p = item %}
+        <div data-search-item="{{ p.data.nome | lower }} {{ p.data.categoria }} {{ p.data.descricaoResumo | lower }}">
+          {% include "card-produto.njk" %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <h2 style="margin:56px 0 24px">Artigos do blog</h2>
+    <div class="blog-grid">
+      {% set posts = collections.blog | reverse %}
+      {% for post in posts %}
+        <div data-search-item="{{ post.data.titulo | lower }} {{ post.data.categoria | lower }} {{ post.data.resumo | lower }}">
+          {% include "card-post.njk" %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <div id="search-empty">
+      <svg width="56" height="56" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <p>Não encontramos nada para essa busca. Tente outro termo ou explore nosso <a href="/produtos/" style="color:var(--blue)">catálogo completo</a>.</p>
+    </div>
+  </div>
+</section>

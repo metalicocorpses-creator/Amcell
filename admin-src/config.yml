@@ -1,0 +1,143 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Onde ficam os arquivos de mídia enviados pelo painel (fotos novas de produto, etc.)
+media_folder: "src/images/uploads"
+public_folder: "/images/uploads"
+
+# IMPORTANTE: troque "SEU-SITE" abaixo pelo endereço real do seu site
+# depois que ele estiver publicado no Netlify (ex: amcell-loja.netlify.app)
+site_url: https://SEU-SITE.netlify.app
+display_url: https://SEU-SITE.netlify.app
+
+locale: "pt"
+
+collections:
+
+  # =========================================================
+  # PRODUTOS
+  # =========================================================
+  - name: "produtos"
+    label: "Produtos"
+    label_singular: "Produto"
+    folder: "src/produtos"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    identifier_field: nome
+    summary: "{{nome}} — R$ {{preco}}"
+    sortable_fields: ["nome", "categoria", "preco"]
+    fields:
+      - { label: "Nome do produto", name: "nome", widget: "string" }
+      - label: "Categoria"
+        name: "categoria"
+        widget: "select"
+        options:
+          - { label: "Capinhas", value: "capinhas" }
+          - { label: "Películas", value: "peliculas" }
+          - { label: "Carregadores", value: "carregadores" }
+          - { label: "Cabos", value: "cabos" }
+          - { label: "Fones de ouvido", value: "fones" }
+          - { label: "Suportes", value: "suportes" }
+          - { label: "Power banks", value: "powerbanks" }
+          - { label: "Acessórios para carro", value: "carro" }
+          - { label: "Smartwatches", value: "smartwatches" }
+          - { label: "Outros acessórios", value: "outros" }
+      - { label: "Preço (R$)", name: "preco", widget: "number", value_type: "float", min: 0 }
+      - { label: "Preço antigo (deixe vazio se não houver desconto)", name: "precoAntigo", widget: "number", value_type: "float", min: 0, required: false }
+      - label: "Selo"
+        name: "selo"
+        widget: "select"
+        required: false
+        default: ""
+        options:
+          - { label: "Nenhum", value: "" }
+          - { label: "Novidade", value: "novidade" }
+          - { label: "Mais vendido", value: "best" }
+          - { label: "Oferta", value: "oferta" }
+      - { label: "Foto principal", name: "imagemPrincipal", widget: "image", media_folder: "/src/images/uploads" }
+      - label: "Fotos adicionais (galeria)"
+        name: "imagens"
+        widget: "list"
+        field: { label: "Foto", name: "imagem", widget: "image", media_folder: "/src/images/uploads" }
+        required: false
+      - { label: "Nota de avaliação (0 a 5)", name: "avaliacaoNota", widget: "number", value_type: "float", min: 0, max: 5, default: 4.8 }
+      - { label: "Quantidade de avaliações", name: "avaliacaoQtd", widget: "number", value_type: "int", min: 0, default: 0 }
+      - { label: "Descrição curta (aparece no card do produto)", name: "descricaoResumo", widget: "string" }
+      - label: "Características (lista de pontos com ✓)"
+        name: "caracteristicas"
+        widget: "list"
+        field: { label: "Característica", name: "item", widget: "string" }
+        required: false
+      - { label: "Mostrar na home (produto em destaque)?", name: "destaque", widget: "boolean", default: false }
+      - { label: "Descrição completa (texto da página do produto)", name: "body", widget: "markdown" }
+
+  # =========================================================
+  # BLOG
+  # =========================================================
+  - name: "blog"
+    label: "Blog"
+    label_singular: "Artigo"
+    folder: "src/blog"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    identifier_field: titulo
+    summary: "{{titulo}} — {{data}}"
+    sortable_fields: ["data", "titulo"]
+    fields:
+      - { label: "Título do artigo", name: "titulo", widget: "string" }
+      - { label: "Categoria", name: "categoria", widget: "string", hint: "Ex: Acessórios, Guia de compra, Tecnologia, Manutenção" }
+      - { label: "Data de publicação", name: "data", widget: "date", format: "YYYY-MM-DD" }
+      - { label: "Tempo de leitura", name: "tempoLeitura", widget: "string", default: "5 min", hint: "Ex: 5 min" }
+      - { label: "Imagem de capa", name: "imagemCapa", widget: "image", media_folder: "/src/images/uploads" }
+      - { label: "Resumo (aparece no card do artigo)", name: "resumo", widget: "text" }
+      - label: "Produtos relacionados"
+        name: "produtosRelacionados"
+        widget: "relation"
+        collection: "produtos"
+        search_fields: ["nome"]
+        value_field: "{{slug}}"
+        display_fields: ["nome"]
+        multiple: true
+        required: false
+        hint: "Escolha produtos para mostrar no final do artigo"
+      - { label: "Conteúdo do artigo", name: "body", widget: "markdown" }
+
+  # =========================================================
+  # DADOS DA LOJA (arquivo único, editado direto)
+  # =========================================================
+  - name: "loja"
+    label: "Dados da loja"
+    files:
+      - label: "Informações gerais"
+        name: "geral"
+        file: "src/_data/loja.json"
+        fields:
+          - { label: "Nome da loja", name: "nome", widget: "string" }
+          - { label: "Descrição curta (aparece no rodapé)", name: "descricaoCurta", widget: "text" }
+          - { label: "WhatsApp (só números, com DDI 55 e DDD)", name: "whatsapp", widget: "string", hint: "Ex: 5511999999999" }
+          - { label: "E-mail de contato", name: "email", widget: "string" }
+          - { label: "Instagram (texto exibido, ex: @amcell)", name: "instagram", widget: "string" }
+          - { label: "Link do Instagram", name: "instagramUrl", widget: "string", required: false }
+          - { label: "Link do Facebook", name: "facebookUrl", widget: "string", required: false }
+          - { label: "Horário de atendimento", name: "horario", widget: "string" }
+          - { label: "Endereço / texto de localização", name: "endereco", widget: "text" }
+
+  # =========================================================
+  # CATEGORIAS (arquivo único, lista editável)
+  # =========================================================
+  - name: "categorias"
+    label: "Categorias"
+    files:
+      - label: "Lista de categorias"
+        name: "lista"
+        file: "src/_data/categorias-lista.json"
+        fields:
+          - name: "categorias"
+            label: "Categorias"
+            widget: "list"
+            fields:
+              - { label: "Identificador (sem espaços/acentos)", name: "slug", widget: "string", hint: "Ex: capinhas" }
+              - { label: "Nome exibido", name: "nome", widget: "string" }

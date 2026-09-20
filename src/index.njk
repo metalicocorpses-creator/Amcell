@@ -1,0 +1,178 @@
+---
+layout: base.njk
+titulo: "Início"
+descricao: "Capinhas, películas, carregadores, fones e muito mais. Acessórios de qualidade para o seu celular, com entrega rápida e atendimento pelo WhatsApp."
+permalink: /index.html
+---
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <span class="hero-eyebrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" fill="currentColor"/></svg>
+        Frete rápido para todo o Brasil
+      </span>
+      <h1>Tudo para deixar seu <em>celular</em> ainda melhor</h1>
+      <p class="hero-lead">Capinhas, películas, carregadores, fones e acessórios selecionados com qualidade de verdade. Proteção e estilo para o seu dia a dia, com atendimento direto pelo WhatsApp.</p>
+      <div class="hero-cta">
+        <a href="/produtos/" class="btn btn-primary">Ver produtos</a>
+        <a href="/contato/" class="btn btn-outline">Fale conosco</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>+230</b><span>produtos no catálogo</span></div>
+        <div class="hero-stat"><b>4.9★</b><span>avaliação média</span></div>
+        <div class="hero-stat"><b>24h</b><span>envio para todo o país</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <svg viewBox="0 0 520 560" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="heroGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#2D5BFF"/>
+            <stop offset="100%" stop-color="#6B3FA0"/>
+          </linearGradient>
+          <radialGradient id="glow" cx="50%" cy="35%" r="65%">
+            <stop offset="0%" stop-color="#2D5BFF" stop-opacity="0.18"/>
+            <stop offset="100%" stop-color="#2D5BFF" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="260" cy="260" r="250" fill="url(#glow)"/>
+        <circle cx="260" cy="270" r="205" fill="#F1F3F7"/>
+        <g transform="translate(50,80)">
+          <ellipse cx="45" cy="45" rx="42" ry="42" fill="#fff" stroke="#E4E7EE" stroke-width="2"/>
+          <path d="M20 45a25 25 0 0 1 50 0" stroke="url(#heroGrad)" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <circle cx="20" cy="52" r="9" fill="url(#heroGrad)"/>
+          <circle cx="70" cy="52" r="9" fill="url(#heroGrad)"/>
+        </g>
+        <g transform="translate(370,70)">
+          <rect x="0" y="0" width="70" height="100" rx="14" fill="#fff" stroke="#E4E7EE" stroke-width="2"/>
+          <rect x="14" y="18" width="42" height="10" rx="5" fill="url(#heroGrad)"/>
+          <circle cx="20" cy="70" r="4" fill="#2D5BFF"/>
+          <circle cx="35" cy="70" r="4" fill="#6B3FA0"/>
+          <circle cx="50" cy="70" r="4" fill="#2D5BFF"/>
+        </g>
+        <g transform="translate(175,150)">
+          <rect x="0" y="0" width="170" height="340" rx="34" fill="#0E1015"/>
+          <rect x="8" y="8" width="154" height="324" rx="27" fill="#F7F8FC"/>
+          <rect x="8" y="8" width="154" height="324" rx="27" fill="url(#heroGrad)" opacity="0.9"/>
+          <rect x="20" y="30" width="130" height="230" rx="12" fill="#ffffff" opacity="0.14"/>
+          <circle cx="85" cy="300" r="14" fill="#ffffff" opacity="0.7"/>
+          <rect x="60" y="16" width="50" height="7" rx="3.5" fill="#0E1015"/>
+        </g>
+        <g transform="translate(60,330)">
+          <path d="M0 60 C 40 0, 90 100, 130 40" stroke="url(#heroGrad)" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <rect x="-14" y="48" width="26" height="26" rx="6" fill="#fff" stroke="#E4E7EE" stroke-width="2"/>
+          <rect x="120" y="26" width="26" height="26" rx="6" fill="#fff" stroke="#E4E7EE" stroke-width="2"/>
+        </g>
+        <g transform="translate(360,340)">
+          <rect x="0" y="0" width="76" height="90" rx="18" fill="#fff" stroke="#E4E7EE" stroke-width="2"/>
+          <rect x="12" y="16" width="52" height="58" rx="10" fill="url(#heroGrad)"/>
+          <rect x="24" y="-14" width="28" height="16" rx="4" fill="#fff" stroke="#E4E7EE" stroke-width="2"/>
+          <rect x="24" y="88" width="28" height="16" rx="4" fill="#fff" stroke="#E4E7EE" stroke-width="2"/>
+        </g>
+      </svg>
+      <div class="hero-badge">
+        <span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span><strong>Compra garantida</strong><span>Produtos originais e testados</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="categorias">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Categorias</h2>
+        <p>Encontre exatamente o que precisa para o seu aparelho.</p>
+      </div>
+      <a href="/produtos/" class="btn btn-ghost">Ver tudo</a>
+    </div>
+    <div class="categories-grid">
+      {% for cat in categorias %}
+      <a href="/produtos/?cat={{ cat.slug }}" class="category-card">
+        <span class="category-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/></svg></span>
+        <span>{{ cat.nome }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="produtos-destaque">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Mais procurados</h2>
+        <p>Uma seleção dos acessórios favoritos dos nossos clientes.</p>
+      </div>
+      <a href="/produtos/" class="btn btn-ghost">Ver catálogo completo</a>
+    </div>
+    <div class="products-grid">
+      {% set destaques = collections.produtos | selectattr("data.destaque") %}
+      {% for item in destaques %}
+        {% set p = item %}
+        {% include "card-produto.njk" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <h2>Feito para quem gosta de tecnologia no dia a dia</h2>
+        <p>Somos uma loja especializada em acessórios para celular, criada para quem busca praticidade, proteção e um toque de estilo. Selecionamos cada produto com cuidado, testando qualidade e durabilidade antes de chegar até você.</p>
+        <a href="/sobre/" class="btn btn-primary" style="margin-top:12px">Conheça nossa história</a>
+      </div>
+      <div class="about-visual">
+        <svg viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg">
+          <rect width="500" height="380" fill="#F2F4F8"/>
+          <rect x="40" y="60" width="180" height="260" rx="20" fill="#fff" stroke="#E4E7EE" stroke-width="2"/>
+          <rect x="60" y="90" width="140" height="90" rx="10" fill="#2D5BFF" opacity="0.12"/>
+          <circle cx="90" cy="135" r="14" fill="#2D5BFF"/>
+          <rect x="115" y="122" width="70" height="8" rx="4" fill="#B9C2E0"/>
+          <rect x="280" y="30" width="180" height="150" rx="20" fill="#fff" stroke="#E4E7EE" stroke-width="2"/>
+          <circle cx="370" cy="105" r="34" fill="#6B3FA0" opacity="0.14"/>
+          <path d="M355 105l10 10 20-22" stroke="#6B3FA0" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="280" y="200" width="180" height="150" rx="20" fill="#fff" stroke="#E4E7EE" stroke-width="2"/>
+          <rect x="300" y="220" width="140" height="60" rx="10" fill="#F2F4F8"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="blog-destaque">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Dicas &amp; Tecnologia</h2>
+        <p>Conteúdo para você tirar o máximo proveito do seu celular.</p>
+      </div>
+      <a href="/blog/" class="btn btn-ghost">Ver todos os artigos</a>
+    </div>
+    <div class="blog-grid">
+      {% set ultimos = collections.blog | reverse | slice(0, 3) %}
+      {% for post in ultimos %}
+        {% include "card-post.njk" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-band">
+      <div>
+        <h2>Ficou com alguma dúvida sobre algum produto?</h2>
+        <p>Fale agora com a nossa equipe pelo WhatsApp e receba atendimento rápido e personalizado.</p>
+      </div>
+      <div class="cta-band-actions">
+        <a href="https://wa.me/{{ loja.whatsapp }}" target="_blank" rel="noopener" class="btn btn-whatsapp">Chamar no WhatsApp</a>
+        <a href="/contato/" class="btn btn-outline" style="border-color:#3A3F4C;color:#fff">Ver contatos</a>
+      </div>
+    </div>
+  </div>
+</section>

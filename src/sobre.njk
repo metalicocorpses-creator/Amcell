@@ -1,0 +1,77 @@
+---
+layout: base.njk
+titulo: "Sobre nós"
+descricao: "Conheça a AmCell: nossa história, valores e o compromisso com qualidade, bom atendimento e produtos modernos para o seu celular."
+permalink: /sobre/index.html
+---
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Início</a> / Sobre nós</div>
+    <div class="about-hero">
+      <h1>Tecnologia pensada para o seu dia a dia</h1>
+      <p>Somos apaixonados por tecnologia e acreditamos que os pequenos acessórios fazem toda a diferença na forma como usamos nosso celular todos os dias.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <h2>Nossa história</h2>
+        <p>A {{ loja.nome }} nasceu da vontade de oferecer acessórios para celular com qualidade de verdade, sem os preços exagerados nem a insegurança de comprar produtos sem procedência. Começamos como uma pequena operação, testando cada produto pessoalmente antes de colocá-lo à venda, e crescemos mantendo esse mesmo cuidado em cada detalhe.</p>
+        <p>Hoje, atendemos clientes em todo o Brasil, sempre com o mesmo compromisso: entregar produtos que realmente funcionam, com um atendimento próximo e humano, direto pelo WhatsApp.</p>
+      </div>
+      <div class="about-visual">
+        <svg viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg">
+          <rect width="500" height="420" fill="#F2F4F8"/>
+          <circle cx="400" cy="80" r="130" fill="#6B3FA0" opacity="0.08"/>
+          <circle cx="80" cy="340" r="110" fill="#2D5BFF" opacity="0.08"/>
+          <rect x="90" y="90" width="150" height="240" rx="24" fill="#fff" stroke="#E4E7EE" stroke-width="3"/>
+          <rect x="115" y="120" width="100" height="150" rx="14" fill="#2D5BFF" opacity="0.14"/>
+          <circle cx="165" cy="290" r="12" fill="#2D5BFF" opacity="0.4"/>
+          <rect x="270" y="150" width="140" height="140" rx="70" fill="#fff" stroke="#E4E7EE" stroke-width="3"/>
+          <path d="M320 220l20 20 36-40" stroke="#6B3FA0" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="about-values">
+      <div class="value-item">
+        <span class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+        <h3>Qualidade em primeiro lugar</h3>
+        <p>Testamos cada produto antes de adicioná-lo ao catálogo, garantindo durabilidade e bom desempenho.</p>
+      </div>
+      <div class="value-item">
+        <span class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 13a8 8 0 0116 0" stroke="currentColor" stroke-width="1.8" fill="none"/><rect x="3" y="13" width="5" height="7" rx="2.2" stroke="currentColor" stroke-width="1.8"/><rect x="16" y="13" width="5" height="7" rx="2.2" stroke="currentColor" stroke-width="1.8"/></svg></span>
+        <h3>Atendimento próximo</h3>
+        <p>Falamos diretamente com você pelo WhatsApp, sem robôs ou respostas automáticas frias.</p>
+      </div>
+      <div class="value-item">
+        <span class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+        <h3>Sempre atualizados</h3>
+        <p>Acompanhamos as novidades do mercado para trazer os acessórios mais modernos e relevantes.</p>
+      </div>
+      <div class="value-item">
+        <span class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l4 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <h3>Entrega rápida</h3>
+        <p>Processamos os pedidos com agilidade para que seu acessório chegue o quanto antes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="cta-band">
+      <div>
+        <h2>Quer conhecer nosso catálogo completo?</h2>
+        <p>Explore todos os acessórios disponíveis ou fale com a gente para tirar dúvidas.</p>
+      </div>
+      <div class="cta-band-actions">
+        <a href="/produtos/" class="btn btn-primary">Ver produtos</a>
+        <a href="https://wa.me/{{ loja.whatsapp }}" target="_blank" rel="noopener" class="btn btn-whatsapp">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
