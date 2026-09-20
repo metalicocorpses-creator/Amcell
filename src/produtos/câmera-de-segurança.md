@@ -1,6 +1,6 @@
 ---
 nome: Câmera de segurança
-categoria: outros
+categoria: capinhas
 preco: 190
 precoAntigo: ""
 selo: novidade
@@ -10,6 +10,6 @@ imagens:
 avaliacaoNota: 4.8
 avaliacaoQtd: 0
 descricaoResumo: câmera para preservar sua segurança
-destaque: true
+destaque: false
 ---
 Câmera de segurança
