@@ -8,8 +8,8 @@ public_folder: "/images/uploads"
 
 # IMPORTANTE: troque "SEU-SITE" abaixo pelo endereço real do seu site
 # depois que ele estiver publicado no Netlify (ex: amcell-loja.netlify.app)
-site_url: https://SEU-SITE.netlify.app
-display_url: https://SEU-SITE.netlify.app
+site_url: https://amcell.netlify.app
+display_url: https://amcell.netlify.app
 
 locale: "pt"
 
