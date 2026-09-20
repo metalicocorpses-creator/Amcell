@@ -1,14 +1,28 @@
 {
   "categorias": [
-    { "slug": "capinhas", "nome": "Capinhas" },
-    { "slug": "peliculas", "nome": "Películas" },
-    { "slug": "carregadores", "nome": "Carregadores" },
-    { "slug": "cabos", "nome": "Cabos" },
-    { "slug": "fones", "nome": "Fones de ouvido" },
-    { "slug": "suportes", "nome": "Suportes" },
-    { "slug": "powerbanks", "nome": "Power banks" },
-    { "slug": "carro", "nome": "Acessórios para carro" },
-    { "slug": "smartwatches", "nome": "Smartwatches" },
-    { "slug": "outros", "nome": "Outros acessórios" }
+    {
+      "slug": "capinhas",
+      "nome": "Capinhas"
+    },
+    {
+      "slug": "peliculas",
+      "nome": "Películas"
+    },
+    {
+      "slug": "carregadores",
+      "nome": "Carregadores"
+    },
+    {
+      "slug": "cabos",
+      "nome": "Cabos"
+    },
+    {
+      "slug": "fones",
+      "nome": "Fones de ouvido"
+    },
+    {
+      "slug": "outros",
+      "nome": "Outros acessórios"
+    }
   ]
 }
